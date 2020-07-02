@@ -9,7 +9,7 @@ class Menu extends Component {
                 {
                   id: 0,
                   name:'Uthappizza',
-                  image: 'assets/images/uthappizza.png',
+                  image: require('./images/uthappizza.png'),
                   category: 'mains',
                   label:'Hot',
                   price:'4.99',
@@ -17,23 +17,23 @@ class Menu extends Component {
                {
                   id: 1,
                   name:'Zucchipakoda',
-                  image: 'assets/images/zucchipakoda.png',
+                  image: require('./images/zucchipakoda.png'),
                   category: 'appetizer',
                   label:'',
                   price:'1.99',
                   description:'Deep fried Zucchini coated with mildly spiced Chickpea flour batter accompanied with a sweet-tangy tamarind sauce'                        },
+               {
+                  id: 2,
+                  name:'Vadonut',
+                  image: require('./images/vadonut.png'),
+                  category: 'appetizer',
+                  label:'New',
+                  price:'1.99',
+                  description:'A quintessential ConFusion experience, is it a vada or is it a donut?'                        },
                   {
-                    id: 2,
-                    name:'Vadonut',
-                    image: 'assets/images/vadonut.png',
-                    category: 'appetizer',
-                    label:'New',
-                    price:'1.99',
-                    description:'A quintessential ConFusion experience, is it a vada or is it a donut?'                        },
-                 {
                     id: 3,
                     name:'ElaiCheese Cake',
-                    image: 'assets/images/elaicheesecake.png',
+                    image: require('./images/elaicheesecake.png'),
                     category: 'dessert',
                     label:'',
                     price:'2.99',
@@ -41,33 +41,33 @@ class Menu extends Component {
                  ],
           };
       }
+  
       render() {
-        const menu = this.state.dishes.map((dish) => {
-            return (
-              <div key={dish.id} className="col-12 mt-5">
-                <Media tag="li">
-                  <Media left middle>
-                      <Media object src={dish.image} alt={dish.name} />
+          const menu = this.state.dishes.map((dish) => {
+              return (
+                <div key={dish.id} className="col-12 mt-5">
+                  <Media tag="li">
+                    <Media left middle>
+                        <Media object src={dish.image} alt={dish.name} />
+                    </Media>
+                    <Media body className="ml-5">
+                      <Media heading>{dish.name}</Media>
+                      <p>{dish.description}</p>
+                    </Media>
                   </Media>
-                  <Media body className="ml-5">
-                    <Media heading>{dish.name}</Media>
-                    <p>{dish.description}</p>
-                  </Media>
+                </div>
+              );
+          });
+          return (
+            <div className="container">
+              <div className="row">
+                <Media list>
+                    {menu}
                 </Media>
               </div>
-            );
-        });
-
-        return (
-          <div className="container">
-            <div className="row">
-              <Media list>
-                  {menu}
-              </Media>
             </div>
-          </div>
-        );
-    }
-}
-
-export default Menu;
+          );
+      }
+  }
+  
+  export default Menu;  
