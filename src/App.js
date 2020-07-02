@@ -1,7 +1,6 @@
-import React,{Component} from 'react';
-import logo from './logo.svg';
-import { Navbar, Nav, NavItem, NavDropdown, MenuItem,Form, Button, FormGroup, FormControl, ControlLabel } from 'react-bootstrap';
-
+import React from 'react';
+import { Navbar, Nav, NavDropdown,Form, Button,  FormControl } from 'react-bootstrap';
+import Menu from './components/MenuComponent';
 import './App.css';
 
 function App() {
@@ -30,6 +29,7 @@ function App() {
     </Form>
   </Navbar.Collapse>
 </Navbar>
+<Menu/>
     </div>
   );
 }
